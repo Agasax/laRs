@@ -6,7 +6,8 @@
 #' @return data.frame
 #' @export
 #'
-#' @examples x <- 1
+#' @examples
+#' x <- 1
 tidynamer <- function(df) {
   df %>% dplyr::rename_with(.cols = dplyr::matches("\\.\\d"), ~ paste0(gsub(".", "[", .x, fixed = TRUE), "]"))
 }
