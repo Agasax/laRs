@@ -35,10 +35,10 @@ library(tidyverse)
 library(tidybayes)
 data(posterior)
 posterior %>% 
-  tidynamer() %>% #changes variable names to fit tidybayes
+  tidy_cmdstanr() %>% #changes variable names to fit tidybayes
   spread_draws(a[gid]) %>% 
   compare_levels(a,by=gid) %>% 
-  distplot(x = a, y = gid, ul = 0.1, ll = -0.1) #halfeye ditribution plot
+  tricolor(x = a, y = gid, ul = 0.1, ll = -0.1) #halfeye ditribution plot
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
