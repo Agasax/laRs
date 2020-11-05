@@ -7,7 +7,8 @@
 #' @export
 #'
 #' @examples
-#' x <- 1
+#' data(posterior)
+#' posterior %>% tidynamer()
 tidynamer <- function(df) {
   df %>% dplyr::rename_with(.cols = dplyr::matches("\\.\\d"), ~ paste0(gsub(".", "[", .x, fixed = TRUE), "]"))
 }

@@ -16,5 +16,6 @@ data.frame
 Change the structure of cmdstan output to fit tidybayes
 }
 \examples{
-x <- 1
+data(posterior)
+posterior \%>\% tidynamer()
 }

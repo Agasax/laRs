@@ -20,7 +20,7 @@
 #' df %>% distplot(x = x, y = y, ul = 0.1, ll = -0.1)
 #' }
 distplot <- function(.data, x, y, ul = 0, ll = 0, ...) {
-  .data %>% ggplot2::ggplot(ggplot2::aes(x = x, y = y, fill = ggplot2::after_stat(ifelse(x > ul, "over", ifelse(x < ll, "under", "no difference"))))) +
+  .data %>% ggplot2::ggplot(ggplot2::aes(x = {{ x }}, y = {{ y }}, fill = ggplot2::after_stat(ifelse(x > ul, "over", ifelse(x < ll, "under", "no difference"))))) +
     tidybayes::stat_halfeye() +
     ggplot2::scale_fill_manual(values = c("over" = "skyblue", "no difference" = "lightgrey", "under" = "pink")) +
     tidybayes::theme_tidybayes() +
