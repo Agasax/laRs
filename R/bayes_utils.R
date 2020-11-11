@@ -27,6 +27,7 @@ normalbeta <- function(mu, sd) {
   beta0 <- alpha0 * (1 / mu - 1)
   list(alpha0 = alpha0, beta0 = beta0)
 }
+<<<<<<< HEAD
 
 
 #' Exact solution for difference between two beta distribution
@@ -50,3 +51,5 @@ h <- function(alpha_a, beta_a,
     )
   1 - sum(exp(log_vals))
 }
+=======
+>>>>>>> f5032a54627174b25a35e2152a8a8bff62a492e5
