@@ -27,21 +27,21 @@ normalbeta <- function(mu, sd) {
   beta0 <- alpha0 * (1 / mu - 1)
   list(alpha0 = alpha0, beta0 = beta0)
 }
-<<<<<<< HEAD
 
 
-#' Exact solution for difference between two beta distribution
+
+#' Closed form solution for difference between two beta distribution
 #'
-#' @param alpha_a
-#' @param beta_a
-#' @param alpha_b
-#' @param beta_b
+#' @param alpha_a alpha parameter distribution a
+#' @param beta_a beta parameter distribution a
+#' @param alpha_b alpha parameter distribution b
+#' @param beta_b beta parameter distribution b
 #'
 #' @return
 #' @export
-#' @references exact solution function, based on "Introduction to empirical Bayes", Robinson
-#' @examples
-h <- function(alpha_a, beta_a,
+#' @references exact solution function, based on https://www.evanmiller.org/bayesian-ab-testing.html#binary_ab
+#' @examples beta_diff(10,1,1,10)
+beta_diff <- function(alpha_a, beta_a,
               alpha_b, beta_b) {
   j <- seq.int(0, round(alpha_b) - 1)
   log_vals <-
@@ -51,5 +51,4 @@ h <- function(alpha_a, beta_a,
     )
   1 - sum(exp(log_vals))
 }
-=======
->>>>>>> f5032a54627174b25a35e2152a8a8bff62a492e5
+
