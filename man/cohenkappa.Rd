@@ -19,7 +19,7 @@ Cohen's kappa
 }
 \examples{
 x <- matrix(c(106, 10,4,22,28, 10,2, 12,  6),ncol=3,byrow=TRUE)
-kappa(x,weights="quadratic")
+cohenkappa(x,weights="quadratic")
 
 
 }

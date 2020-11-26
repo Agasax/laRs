@@ -19,7 +19,7 @@ You can install the the development version from
 devtools::install_github("Agasax/laRs")
 ```
 
-## Example
+## Tricolor plot
 
 ``` r
 library(laRs)
@@ -42,3 +42,21 @@ posterior %>%
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+## Cohen’s kappa
+
+``` r
+x <- matrix(c(106, 10,4,22,28, 10,2, 12,  6),ncol=3,byrow=TRUE)
+cohenkappa(x,weights="quadratic")
+#> cohenkappa(x = x, weights = "quadratic")
+#> 
+#> Cohen's Kappa and weighted Kappa for categorical agreement 
+#> 
+#>            kappa kappa_max kappa_ratio
+#> Unweighted  0.43      0.95        0.45
+#> Weighted    0.57      0.86        0.66
+#> 
+#> 
+#> Number of observations: 200
+#> Weights: quadratic
+```

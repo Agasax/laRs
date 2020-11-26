@@ -30,8 +30,7 @@ You can install the the development version from [GitHub](https://github.com/) w
 devtools::install_github("Agasax/laRs")
 ```
 
-## Example
-
+## Tricolor plot
 
 ```{r example}
 library(laRs)
@@ -45,4 +44,9 @@ posterior %>%
   tricolor(x = a, y = gid, ul = 0.1, ll = -0.1) #halfeye ditribution plot
 ```
 
+## Cohen's kappa
 
+```{r cohenkappa}
+x <- matrix(c(106, 10,4,22,28, 10,2, 12,  6),ncol=3,byrow=TRUE)
+cohenkappa(x,weights="quadratic")
+```
