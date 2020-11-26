@@ -16,7 +16,8 @@ cohenkappa <- function(x,weights=c("linear","quadratic")) {
   if (!is.matrix(x)||(ncol(x)!=nrow(x))) stop("Require n*n matrix")
 
   if(is.character(weights)) {
-    weights <- match.arg(weights)
+    wt <- weights <- match.arg(weights)
+
   }
   OA <- diag(x)
   n <- sum(x)
@@ -26,7 +27,7 @@ cohenkappa <- function(x,weights=c("linear","quadratic")) {
   rowFrq <- rowSums(x)/n
   Pe <- crossprod(colFrq,rowFrq)[1]
 
-  W <- if (is.matrix(weights)){weights}
+  W <- if (is.matrix(weights)){ wt <- weights}
   else if (weights=="linear")  {1 - abs(outer(1:nc, 1:nc, "-"))/(nc - 1)}
   else if (weights=="quadratic")  {1 - (abs(outer(1:nc, 1:nc, "-"))/(nc - 1))^2}
   else {stop('Valid arguments for Weight are "linear", "quadratic" or an n*n matrix of weights')}
@@ -46,8 +47,7 @@ cohenkappa <- function(x,weights=c("linear","quadratic")) {
   kw <- kappa(Pow,Pew)
   kw_max <- max_kappa(W*x)
   kwr <- kw/kw_max
-
-  y=structure(list(unweighted=c(kappa=k,kappa_max=kmax,kappa_ratio=kr),weighted=c(kappa=kw,kappa_max=kw_max,kappa_ratio=kwr),Weights=W,n=n,Call=cl), class=c("laRs","cohenkappa"))
+  y=structure(list(unweighted=c(kappa=k,kappa_max=kmax,kappa_ratio=kr),weighted=c(kappa=kw,kappa_max=kw_max,kappa_ratio=kwr),weight.matrix=W,n=n,Call=cl,wt=wt), class=c("laRs","cohenkappa"))
   return(y)
 
 }

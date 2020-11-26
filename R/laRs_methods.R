@@ -17,7 +17,9 @@ print.laRs<- function(x, digits=2, ...){
            print(x$Call)
            cat("\nCohen's Kappa and weighted Kappa for categorical agreement \n\n")
            print(k,digits=digits)
-           cat(paste0("\n\nNumber of observations: ",x$n))
+           cat(paste0("\n\nNumber of observations: ",x$n,"\n"))
+           cat(paste0("Weights: ",x$wt))
+
 
          })
 }

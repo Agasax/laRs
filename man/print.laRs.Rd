@@ -7,7 +7,7 @@
 \method{print}{laRs}(x, digits = 2, ...)
 }
 \arguments{
-\item{x}{An object of type kappa}
+\item{x}{An object of type cohenkappa}
 
 \item{digits}{Rounding}
 
