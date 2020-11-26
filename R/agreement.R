@@ -11,7 +11,7 @@
 #' kappa(x,weights="quadratic")
 #'
 #'
-kappa <- function(x,weights=c("linear","quadratic")) {
+cohenkappa <- function(x,weights=c("linear","quadratic")) {
   cl <- match.call()
   if (!is.matrix(x)||(ncol(x)!=nrow(x))) stop("Require n*n matrix")
 
@@ -47,7 +47,7 @@ kappa <- function(x,weights=c("linear","quadratic")) {
   kw_max <- max_kappa(W*x)
   kwr <- kw/kw_max
 
-  y=structure(list(unweighted=c(kappa=k,kappa_max=kmax,kappa_ratio=kr),weighted=c(kappa=kw,kappa_max=kw_max,kappa_ratio=kwr),Weights=W,n=n,Call=cl), class=c("laRs","kappa"))
+  y=structure(list(unweighted=c(kappa=k,kappa_max=kmax,kappa_ratio=kr),weighted=c(kappa=kw,kappa_max=kw_max,kappa_ratio=kwr),Weights=W,n=n,Call=cl), class=c("laRs","cohenkappa"))
   return(y)
 
 }

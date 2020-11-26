@@ -3,7 +3,7 @@
 S3method(print,laRs)
 export("%>%")
 export(beta_diff)
-export(kappa)
+export(cohenkappa)
 export(norm_logit_solve)
 export(normalbeta)
 export(tidy_cmdstanr)

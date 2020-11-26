@@ -1,6 +1,6 @@
 #' Print methods
 #'
-#' @param x An object of type kappa
+#' @param x An object of type cohenkappa
 #' @param digits Rounding
 #' @param ... Additional arguemnts for print
 #'
@@ -11,7 +11,7 @@
 print.laRs<- function(x, digits=2, ...){
   if(length(class(x))>1) {value <- class(x)[2]}
   switch(value,
-         kappa={
+         cohenkappa={
            k <- rbind(x$unweighted,x$weighted)
            rownames(k) <- c('Unweighted','Weighted')
            print(x$Call)
