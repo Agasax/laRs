@@ -14,7 +14,8 @@ Imports:
     magrittr,
     dplyr,
     ggplot2,
-    tidybayes
+    tidybayes,
+    stats
 Suggests: 
     testthat,
     tidyverse

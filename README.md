@@ -60,3 +60,18 @@ cohenkappa(x,weights="quadratic")
 #> Number of observations: 200
 #> Weights: quadratic
 ```
+
+## Beta test for difference of proportions
+
+``` r
+test <- beta_diff(8,11,6,11,prior="uniform",sample=1e4)
+test
+#> Probability of lower eventrate in a than b is: 
+#> 0.8
+
+test$post.samples %>% 
+  data.frame(x=.) %>% 
+  tricolor(x=x)
+```
+
+<img src="man/figures/README-beta_diff-1.png" width="100%" />

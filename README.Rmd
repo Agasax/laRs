@@ -32,7 +32,7 @@ devtools::install_github("Agasax/laRs")
 
 ## Tricolor plot
 
-```{r example}
+```{r example,messages=FALSE}
 library(laRs)
 library(tidyverse)
 library(tidybayes)
@@ -49,4 +49,18 @@ posterior %>%
 ```{r cohenkappa}
 x <- matrix(c(106, 10,4,22,28, 10,2, 12,  6),ncol=3,byrow=TRUE)
 cohenkappa(x,weights="quadratic")
+```
+
+## Beta test for difference of proportions
+
+```{r beta_diff}
+test <- beta_diff(8,11,6,11,prior="uniform",sample=1e4)
+test
+
+test$post.samples %>% 
+  data.frame(x=.) %>% 
+  tricolor(x=x)
+  
+
+
 ```

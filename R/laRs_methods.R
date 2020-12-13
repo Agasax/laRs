@@ -21,5 +21,9 @@ print.laRs<- function(x, digits=2, ...){
            cat(paste0("Weights: ",x$wt))
 
 
+         },
+         beta_diff={cat("Probability of lower eventrate in a than b is: \n")
+           cat(round(x$exact.prob,digits = digits))
+
          })
 }

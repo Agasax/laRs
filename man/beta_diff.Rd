@@ -4,16 +4,27 @@
 \alias{beta_diff}
 \title{Closed form solution for difference between two beta distribution}
 \usage{
-beta_diff(alpha_a, beta_a, alpha_b, beta_b)
+beta_diff(
+  event_a,
+  n_a,
+  event_b,
+  n_b,
+  prior = c("uniform", "jeffrey", "empirical", "half_empirical"),
+  sample = NULL
+)
 }
 \arguments{
-\item{alpha_a}{alpha parameter distribution a}
+\item{event_a}{number of events in group a}
 
-\item{beta_a}{beta parameter distribution a}
+\item{n_a}{size group a}
 
-\item{alpha_b}{alpha parameter distribution b}
+\item{event_b}{number of events in group b}
 
-\item{beta_b}{beta parameter distribution b}
+\item{n_b}{size group b}
+
+\item{prior}{prior for beta distribution, either 'uniform','jeffrey' or 'emprirical'}
+
+\item{sample}{size of samples}
 }
 \value{
 
