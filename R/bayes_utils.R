@@ -87,11 +87,12 @@ beta_diff <- function(event_a, n_a,
       lbeta(alpha_a + j, beta_a + beta_b) - log(beta_b + j) -
         lbeta(1 + j, beta_b) - lbeta(alpha_a, beta_a)
     )
-  exact.prob<- 1 - sum(exp(log_vals))
+  exact.prob<-  sum(exp(log_vals))
   if (is.numeric(sample)) {
-    post.samples <- rbeta(sample,alpha_a,beta_a)-rbeta(sample,alpha_b,beta_b)
+    post.samples <- data.frame(a = rbeta(sample,alpha_a,beta_a), b=rbeta(sample,alpha_b,beta_b))
+    post.samples$diff <- post.samples$a-post.samples$b
 
-  } else{posterior_diff <- NULL}
+  } else{post.samples <- NULL}
   return(structure(list(exact.prob=exact.prob,post.samples=post.samples),
                    class=c("laRs","beta_diff")))
 

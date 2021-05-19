@@ -15,7 +15,9 @@ Imports:
     dplyr,
     ggplot2,
     tidybayes,
-    stats
+    stats,
+    carbonate,
+    purrr
 Suggests: 
     testthat,
     tidyverse

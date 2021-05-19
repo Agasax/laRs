@@ -2,10 +2,12 @@
 
 S3method(print,laRs)
 export("%>%")
+export(as.unordered)
 export(beta_diff)
 export(cohenkappa)
 export(norm_logit_solve)
 export(normalbeta)
+export(snip)
 export(tidy_cmdstanr)
 export(tricolor)
 importFrom(magrittr,"%>%")

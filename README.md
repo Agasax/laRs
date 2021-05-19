@@ -24,14 +24,6 @@ devtools::install_github("Agasax/laRs")
 ``` r
 library(laRs)
 library(tidyverse)
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
-#> ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-#> ✓ tibble  3.0.4     ✓ dplyr   1.0.2
-#> ✓ tidyr   1.1.2     ✓ stringr 1.4.0
-#> ✓ readr   1.3.1     ✓ forcats 0.5.0
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> x dplyr::filter() masks stats::filter()
-#> x dplyr::lag()    masks stats::lag()
 library(tidybayes)
 data(posterior)
 posterior %>% 
@@ -67,11 +59,10 @@ cohenkappa(x,weights="quadratic")
 test <- beta_diff(8,11,6,11,prior="uniform",sample=1e4)
 test
 #> Probability of lower eventrate in a than b is: 
-#> 0.8
+#> 0.2
 
 test$post.samples %>% 
-  data.frame(x=.) %>% 
-  tricolor(x=x)
+  tricolor(x=diff)
 ```
 
 <img src="man/figures/README-beta_diff-1.png" width="100%" />

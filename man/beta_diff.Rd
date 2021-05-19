@@ -33,7 +33,7 @@ beta_diff(
 Closed form solution for difference between two beta distribution
 }
 \examples{
-beta_diff(10,1,1,10)
+beta_diff(10,11,1,11)
 }
 \references{
 exact solution function, based on https://www.evanmiller.org/bayesian-ab-testing.html#binary_ab
