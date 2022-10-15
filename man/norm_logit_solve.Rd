@@ -14,7 +14,7 @@ norm_logit_solve(mu, value, prob)
 \item{prob}{probability of tail area}
 }
 \value{
-
+Standard deviation
 }
 \description{
 Given mu and value, solve for SD so that the tail area of the normal distribution beyond value is prob

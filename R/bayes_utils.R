@@ -4,7 +4,7 @@
 #' @param value value for tail area
 #' @param prob probability of tail area
 #'
-#' @return
+#' @return Standard deviation
 #' @export
 #' @references http://hbiostat.org/doc/bbr.pdf
 #' @examples norm_logit_solve(qlogis(0.05), qlogis(0.2), 0.1) # qlogis is R logit ()
@@ -39,7 +39,7 @@ normalbeta <- function(mu, sd) {
 #' @param prior prior for beta distribution, either 'uniform','jeffrey' or 'emprirical'
 #' @param sample size of samples
 #' @importFrom stats rbeta
-#' @return
+#' @return Posterior probaiblity of superiority
 #' @export
 #' @references exact solution function, based on https://www.evanmiller.org/bayesian-ab-testing.html#binary_ab
 #' @examples beta_diff(10,11,1,11)

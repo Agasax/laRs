@@ -7,9 +7,6 @@ https://twitter.com/jeremy_data/status/1371171913578520587}
 \usage{
 snip()
 }
-\value{
-
-}
 \description{
 Snip carbonate, pretty twitter code
 https://twitter.com/jeremy_data/status/1371171913578520587

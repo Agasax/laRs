@@ -4,12 +4,11 @@ Title: Personal convenience functions
 Version: 0.1.0
 Author: Lars Mølgaard Saxhaug
 Maintainer: Lars Mølgaard Saxhaug <lars.molgaard.saxhaug@ntnu.no>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Personal utility functions
 License: AGPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
 Imports: 
     magrittr,
     dplyr,
@@ -17,7 +16,8 @@ Imports:
     tidybayes,
     stats,
     carbonate,
-    purrr
+    purrr,
+    rethinking
 Suggests: 
     testthat,
     tidyverse

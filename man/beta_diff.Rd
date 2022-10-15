@@ -27,7 +27,7 @@ beta_diff(
 \item{sample}{size of samples}
 }
 \value{
-
+Posterior probaiblity of superiority
 }
 \description{
 Closed form solution for difference between two beta distribution
